@@ -1,0 +1,18 @@
+
+
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: npx commitlint --edit
+
+
+pre-commit:
+  paralel: true
+  commands:
+    format: 
+      glob: "*.{js,jsx,ts,tsx,css}"
+      run: pnpm format
+    lint:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: pnpm lint
+      
