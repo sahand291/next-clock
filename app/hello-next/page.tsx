@@ -1,9 +1,7 @@
 export default function HelloWorld() {
   return (
     <>
-      <p>
-        is this a page?
-      </p>
+      <p>is this a page?</p>
     </>
-  )
+  );
 }
