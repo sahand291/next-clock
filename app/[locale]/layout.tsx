@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import '@mantine/core/styles.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Fonts } from "@/config";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +23,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
-      <body className={inter.className}>
+      <body className={locale === 'fa' ? Fonts.IranSans.className : Fonts.Inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
