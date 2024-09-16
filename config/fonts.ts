@@ -1,6 +1,5 @@
-import localFonts from 'next/font/local'
+import localFonts from "next/font/local";
 import { Inter } from "next/font/google";
-
 
 const iranSans = localFonts({
   src: [
@@ -19,8 +18,8 @@ const iranSans = localFonts({
       style: "normal",
       weight: "600",
     },
-  ]
-})
+  ],
+});
 
 const inter = Inter({
   subsets: ["latin"],

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import '@mantine/core/styles.css';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import "@mantine/core/styles.css";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 import "./globals.css";
 import { Fonts } from "@/config";
@@ -13,17 +13,20 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale }
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
-      <body className={locale === 'fa' ? Fonts.IranSans.className : Fonts.Inter.className}>
+    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
+      <body
+        className={
+          locale === "fa" ? Fonts.IranSans.className : Fonts.Inter.className
+        }
+      >
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
